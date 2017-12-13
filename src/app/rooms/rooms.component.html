@@ -1,0 +1,25 @@
+<h2>nouveau salon</h2>
+<br>
+
+
+
+<div *ngIf="newRoom">
+  <fieldset>
+    <legend>Ajouts</legend>
+    <label for="">nom : </label>
+    <input type="text" name="nom" [(ngModel)]="room.name" placeholder="nom">
+    <label for="">thème : </label>
+    <input type="text" name="theme" [(ngModel)]="room.theme" placeholder="theme">
+  </fieldset>
+  <button (click)="save();"> Sauvegarder </button>
+</div>
+<button (click)="toggleNew();"> {{newRoom?'Annuler' : 'Ajouter un salon'}} </button>
+
+
+<br>
+<br>
+<h2>liste des salons</h2>
+<br>
+<div *ngFor="let room of rooms">
+  <a routerLink="/room/{{room.id}}"> {{room.name}}</a>
+</div>

@@ -1,0 +1,33 @@
+<div *ngIf="room">
+    <!-- si room existe-->
+    <h1>affichage du salon {{room.name}}</h1>
+
+    <p>
+        <span>{{room.id}}</span>
+        <span>{{room.name}}</span>
+        <span>{{room.theme}}</span>
+    </p>
+
+
+    <div *ngIf="edit">
+        <fieldset>
+            <legend>Modification</legend>
+            <label for="">id : </label>
+            <input type="number"  name="id" [(ngModel)]="room.id"  disabled="disabled">
+            <label for="">nom : </label>
+            <input type="text" name="nom" [(ngModel)]="room.name">
+            <label for="">thème : </label>
+            <input type="text" name="theme" [(ngModel)]="room.theme">
+        </fieldset>
+    </div>
+
+    <button (click)="toggleEdit()"> éditer </button>
+    <button (click)="save()"> Sauvegarder </button>
+
+    <br>
+    
+<app-message [roomId]="room.id"></app-message>
+
+
+
+</div>

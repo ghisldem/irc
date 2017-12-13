@@ -1,0 +1,23 @@
+<div *ngIf='message'>
+  <p>********************************************************************************************************</p>
+  <h4>Liste des messages</h4>
+
+  <div *ngFor="let message of messages">
+    {{message.text}}
+  </div>
+
+  <p>********************************************************************************************************</p>
+  <h4>nouveau message</h4>
+
+  <div class="form">
+
+    <label for="text">texte : </label>
+    <input type="text" name="text" [(ngModel)]="message.text">
+    <button (click)="save()">Envoyer</button>
+
+  </div>
+
+  <br>
+
+
+</div>
